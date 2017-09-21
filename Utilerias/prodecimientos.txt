@@ -1,0 +1,37 @@
+//Insertar
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS insert_usuarios$$
+create PROCEDURE insert_usuarios(
+	IN pusuario VARCHAR(50),
+    IN pnombre VARCHAR(50),
+    IN ppass VARCHAR(50)
+)
+BEGIN
+	INSERT INTO usuarios(
+    	nombre,
+        usuario,
+        password
+    ) VALUES (
+    	pnombre,
+        pusuario,
+        ppass
+    );
+END$$
+
+
+//Seleccionar usuarios por id
+
+DELIMITER$$
+CREATE PROCEDURE selectUsrByID(IN pid INT)
+BEGIN
+	SELECT * FROM usuarios WHERE id = pid;
+END$$
+
+
+//Seleccionar todos usuarios
+DELIMITER $$
+CREATE PROCEDURE selectUsuarios()
+BEGIN
+	SELECT * FROM usuarios;
+END$$
