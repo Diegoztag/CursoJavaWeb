@@ -39,4 +39,34 @@
     <servlet-name>EditaUsuario</servlet-name>
     <url-pattern>/EditaUsuario</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AltaAlumnos</display-name>
+    <servlet-name>AltaAlumnos</servlet-name>
+    <servlet-class>com.app.alumnos.AltaAlumnos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AltaAlumnos</servlet-name>
+    <url-pattern>/AltaAlumnos</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EliminaAlumno</display-name>
+    <servlet-name>EliminaAlumno</servlet-name>
+    <servlet-class>com.app.alumnos.EliminaAlumno</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminaAlumno</servlet-name>
+    <url-pattern>/EliminaAlumno</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditaAlumno</display-name>
+    <servlet-name>EditaAlumno</servlet-name>
+    <servlet-class>com.app.alumnos.EditaAlumno</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditaAlumno</servlet-name>
+    <url-pattern>/EditaAlumno</url-pattern>
+  </servlet-mapping>
 </web-app>

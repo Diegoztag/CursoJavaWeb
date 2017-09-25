@@ -1,0 +1,36 @@
+Consumir StoredProcedure en JAVA
+		Conexion mysql = new Conexion();
+		Connection conn = mysql.getConexion();
+		String sql = "{CALL select_usrByID(?)}";
+		try {
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt("usrid", 1);
+			ResultSet rs = cs.executeQuery();
+			while( rs.next() ){
+				System.out.println("Nombre:"+rs.getString("nombre"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+Ejercicio final:
+
+Paso 1: Agregar plantillas a los archivos inserta_alumnos.jsp y qry_alumnos.jsp
+
+Paso 2: para cada método del CRUD, reaizar su correspondiente SP
+
+Paso 3: El listado general de alumnos se tendrá que realizar con una etiqueta de tipo JSTL:
+<ct:listaAlumnos>
+<tr>
+	<td><--nombre--></td>
+	<td><--apaterno--></td>
+	<td><--amaterno--></td>
+	<td>Editar | Eliminar</td>
+</tr>
+
+DELIMITER $$
+CREATE PROCEDURE select_usrByID(IN usrid INT)
+BEGIN
+	SELECT usuarios_login, usuarios_passwd FROM usuarios
+	WHERE usuarios_id = usrid;
+END$$
